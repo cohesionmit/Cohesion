@@ -32,7 +32,7 @@ public class SettingsActivity extends Activity implements OnClickListener {
 	TextView popupText, nameField;
 	TableLayout table_layout;
 	EditText fillClass;
-	ArrayList<String> courses=new ArrayList<String>();
+	static ArrayList<String> courses=new ArrayList<String>();
 	String name;
 	ArrayList<Button> deletes=new ArrayList<Button>();
 	int currentID=0;
@@ -54,16 +54,10 @@ public class SettingsActivity extends Activity implements OnClickListener {
 		fillClass=(EditText)findViewById(R.id.popup);
 		insidePopupButton = (Button)findViewById(R.id.popupbutton);
 		insidePopupButton.setOnClickListener(this);
-//		LinearLayout popupBox = new LinearLayout(this);
-//		popupBox.addView(fillClass);
-//		popupBox.addView(insidePopupButton);
-//		popupMessage = new PopupWindow(popupBox, LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
-//		popupMessage.setContentView(popupBox);
 	} 
 	
 	@Override public void onClick(View v) { 
 		if (v.getId() == add.getId()) { 
-//			popupMessage.showAtLocation(add, Gravity.CENTER, 0, 0);
 			fillClass.setVisibility(View.VISIBLE);
 			insidePopupButton.setVisibility(View.VISIBLE);
 			nameField.clearFocus();
@@ -117,7 +111,7 @@ public class SettingsActivity extends Activity implements OnClickListener {
 		table_layout.removeViewAt(deleteIndex);
 	}
 	
-	public ArrayList<String> getCourses() {
+	public static ArrayList<String> getCourses() {
 		return courses;
 	}
 	
